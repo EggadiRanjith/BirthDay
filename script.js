@@ -1,7 +1,5 @@
 const year = new Date().getFullYear();
-const fourthOfJuly = new Date(year, 6,4).getTime();
-const fourthOfJulyNextYear = new Date(year + 1, 6, 4).getTime();
-const month = new Date().getMonth();
+const targetDate = new Date(year, 5, 20).getTime(); // June is month 5 (0-indexed)
 
 // countdown
 let timer = setInterval(function() {
@@ -11,14 +9,12 @@ let timer = setInterval(function() {
 
   // get the difference
   let diff;
-  if(month > 6) {
-    diff = fourthOfJulyNextYear - today;
+  if (today > targetDate) {
+    const nextYear = year + 1;
+    diff = new Date(nextYear, 5, 20).getTime() - today; // June is month 5 (0-indexed)
   } else {
-    diff = fourthOfJuly - today;
+    diff = targetDate - today;
   }
-
-
-
 
   // math
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -28,14 +24,14 @@ let timer = setInterval(function() {
 
   // display
   document.getElementById("timer").innerHTML =
-    "<div class=\"days\"> \
-  <div class=\"numbers\">" + days + "</div>days</div> \
-<div class=\"hours\"> \
-  <div class=\"numbers\">" + hours + "</div>hours</div> \
-<div class=\"minutes\"> \
-  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
-<div class=\"seconds\"> \
-  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
-</div>";
+    `<div class="days"> \
+      <div class="numbers">${days}</div>days</div> \
+    <div class="hours"> \
+      <div class="numbers">${hours}</div>hours</div> \
+    <div class="minutes"> \
+      <div class="numbers">${minutes}</div>minutes</div> \
+    <div class="seconds"> \
+      <div class="numbers">${seconds}</div>seconds</div> \
+    </div>`;
 
 }, 1000);

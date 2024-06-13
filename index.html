@@ -6,8 +6,14 @@
     <title>Responsive Countdown Timer</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <script defer src="confetti.js"></script>
 </head>
 <body>
+    <div class="header">
+        <h1>Advance Happy Birthday!</h1>
+        <p>"Birthdays are a new start, a fresh beginning, and a time to pursue new endeavors with new goals. Move forward with confidence and courage. You're a very special person. May today and all of your days be amazing!"</p>
+    </div>
+
     <div class="container">
         <div class="balloon white">
             <div class="star-red"></div>
@@ -39,12 +45,15 @@
             <div class="string"></div>
         </div>
         <div id="timer"></div>
-        <h1>4th of July Countdown</h1>
+        <h1>20th of July Countdown</h1>
     </div>
 
     <!-- New section for image -->
     <section class="image-section">
-        <img src="rabb.jpg" alt="Description of your image">
+        <img src="rabbit.png" alt="Birthday Balloons">
     </section>
+
+    <!-- Canvas for confetti animation -->
+    <canvas id="confettiCanvas"></canvas>
 </body>
 </html>

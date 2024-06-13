@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900");
 html {
   display: grid;
-  min-height: 100%;
 }
 
 body {
@@ -25,7 +24,20 @@ h1 {
   letter-spacing: 5px;
   color: #000000;
 }
-
+.header {
+    color: #020000;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.header h1 {
+    font-size: 24px;
+    margin-top: 120px;
+}
+.header p {
+    font-size: 16px;
+    margin-top: 30px;
+}
 #timer {
   color: #F6F4F3;
   text-align: center;
@@ -199,4 +211,15 @@ h1 {
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Optional: Add border radius for image */
 
+}
+
+/* Ensure the confetti canvas is positioned behind other elements */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Push it behind all other content */
+    pointer-events: none; /* Allow clicks to pass through the canvas */
 }
